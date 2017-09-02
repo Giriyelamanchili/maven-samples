@@ -4,6 +4,14 @@ pipeline {
     agent any
     
     stages {
+	stage ('Build stage') {
+ 
+            steps {
+	              withMaven(maven :'apache-maven-3.5.0') {
+                    sh 'mvn build'
+                }
+            }
+        }    
        	stage ('Compile stage') {
  
             steps {
