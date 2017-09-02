@@ -7,7 +7,7 @@ pipeline {
 	stage ('Build stage') {
  
             steps {
-	              withMaven(maven :'apache-maven-3.5.0') {
+	              withMaven(maven : 'maven-3.5.0') {
                     sh 'mvn build'
                 }
             }
@@ -15,7 +15,7 @@ pipeline {
        	stage ('Compile stage') {
  
             steps {
-	              withMaven(maven :'apache-maven-3.5.0') {
+	              withMaven(maven : 'maven-3.5.0') {
                     sh 'mvn clean compile'
                 }
             }
@@ -24,7 +24,7 @@ pipeline {
         stage ('Testing stage') {
  
             steps {
-	              withMaven(maven :'apache-maven-3.5.0') {
+	              withMaven(maven : 'maven-3.5.0') {
                     sh 'mvn test'
                 }
             }
@@ -32,7 +32,7 @@ pipeline {
         stage ('Deployment stage') {
  
             steps {
-	              withMaven(maven :'apache-maven-3.5.0') {
+	              withMaven(maven : 'maven-3.5.0') {
                     sh 'mvn deploy'
                 }
             }
